@@ -1,4 +1,4 @@
-class SwitchUserController < ApplicationController
+class SwitchUserController < ActionController::Base
   before_action :developer_modes_only
 
   def set_current_user
