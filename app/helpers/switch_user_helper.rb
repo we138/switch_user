@@ -3,8 +3,10 @@ module SwitchUserHelper
   def switch_user_select
     return unless available?
 
-    if provider.current_user
-      selected_user = "#{provider.current_user.class.name.underscore}_#{provider.current_user.id}"
+    user = current_user || current_admin
+    
+    if user
+      selected_user = "#{user.class.name.underscore}_#{user.id}"
     else
       selected_user = nil
     end
